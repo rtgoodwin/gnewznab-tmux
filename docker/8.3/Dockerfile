@@ -18,6 +18,7 @@ RUN apt-get update \
     && echo "deb [signed-by=/etc/apt/keyrings/yarn.gpg] https://dl.yarnpkg.com/debian/ stable main" > /etc/apt/sources.list.d/yarn.list \
     && curl -sS https://www.postgresql.org/media/keys/ACCC4CF8.asc | gpg --dearmor | tee /etc/apt/keyrings/pgdg.gpg >/dev/null \
     && echo "deb [signed-by=/etc/apt/keyrings/pgdg.gpg] http://apt.postgresql.org/pub/repos/apt jammy-pgdg main" > /etc/apt/sources.list.d/pgdg.list \
+    && git clone git@github.com:rtgoodwin/gnewznab-tmux.git . \
     && apt-get update \
     && apt-get install -y php8.3-cli php8.3-dev \
        php8.3-pgsql php8.3-sqlite3 php8.3-gd php8.3-imagick \
